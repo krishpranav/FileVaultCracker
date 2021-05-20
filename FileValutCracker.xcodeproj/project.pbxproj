@@ -22,6 +22,7 @@
 		9FCEB9A6265641210071BBD3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FCEB9A4265641210071BBD3 /* MainMenu.xib */; };
 		9FCEB9A92656418C0071BBD3 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FCEB9A72656418C0071BBD3 /* MainWindowController.xib */; };
 		9FCEB9AB265641B50071BBD3 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9FCEB9AA265641B50071BBD3 /* Icon.icns */; };
+		9FCEB9B12656436F0071BBD3 /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9FCEB9B02656436F0071BBD3 /* words.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		9FCEB9A5265641210071BBD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = MainMenu.xib; sourceTree = "<group>"; };
 		9FCEB9A82656418C0071BBD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = MainWindowController.xib; sourceTree = "<group>"; };
 		9FCEB9AA265641B50071BBD3 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
+		9FCEB9B02656436F0071BBD3 /* words.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 		9FCEB95626562CB90071BBD3 /* FileValutCracker */ = {
 			isa = PBXGroup;
 			children = (
+				9FCEB9AF265643520071BBD3 /* Resources */,
 				9FCEB99D26563FDB0071BBD3 /* Interface */,
 				9FCEB98726562DBB0071BBD3 /* Classes */,
 				9FCEB95D26562CBB0071BBD3 /* Assets.xcassets */,
@@ -205,6 +208,14 @@
 				9FCEB9A72656418C0071BBD3 /* MainWindowController.xib */,
 			);
 			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		9FCEB9AF265643520071BBD3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9FCEB9B02656436F0071BBD3 /* words.txt */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FCEB9A3265640970071BBD3 /* AboutWindowController.xib in Resources */,
+				9FCEB9B12656436F0071BBD3 /* words.txt in Resources */,
 				9FCEB95E26562CBB0071BBD3 /* Assets.xcassets in Resources */,
 				9FCEB96126562CBB0071BBD3 /* Main.storyboard in Resources */,
 				9FCEB9AB265641B50071BBD3 /* Icon.icns in Resources */,

@@ -227,7 +227,7 @@ NS_ASSUME_NONNULL_END
     
     [ panel beginSheetModalForWindow: self.window completionHandler: ^( NSInteger result )
      {
-         if( result != NSFileHandlingPanelOKButton )
+         if( result != NSModalResponseOK )
          {
              return;
          }
