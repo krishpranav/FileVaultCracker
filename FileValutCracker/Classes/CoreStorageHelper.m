@@ -88,3 +88,39 @@ NS_ASSUME_NONNULL_END
     return locked;
 }
 
+
+- ( BOOL )unlockLogicalVolumeUUID: ( NSString * )volumeUUID withAKSUUID: ( NSString * )aksUUID
+{
+    NSMutableDictionary * options;
+    
+    atomic_store( &_unlocked, false );
+    
+    if( volumeUUID.length == 0 || aksUUID.length == 0 )
+    {
+        return NO;
+    }
+    
+    options =
+    @{
+      @"lvuuid"  : volumeUUID,
+      @"options" :
+          @{
+              @"AKSPassphraseUUID" : aksUUID
+              }
+      }
+    .mutableCopy;
+    
+    [ self.cs unlockLogicalVolume: volumeUUID options: options[ @"options" ] ];
+    
+    CFRunLoopRun();
+    
+    return atomic_load( &_unlocked );
+}
+
+#pragma mark - DMManagerDelegate
+
+- ( void )dmInterruptibilityChanged: ( BOOL )value
+{
+    ( void )value;
+}
+
