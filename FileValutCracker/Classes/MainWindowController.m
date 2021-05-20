@@ -45,3 +45,18 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+
+@implementation MainWindowController
+
+- (instancetype) init
+{
+    return [self initWithWindowNibName: NSStringFromClass(self.class)];
+}
+
+- (void) dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self.timer invalidate];
+}
+
+@end
