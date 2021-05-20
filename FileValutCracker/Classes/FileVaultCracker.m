@@ -19,34 +19,31 @@ NS_ASSUME_NONNULL_BEGIN
     atomic_bool _unlocked;
 }
 
-@property(atomic, readwrite, strong) DMManager * manager;
-@property(atomic, readwrite, strong) DMCoreStorage * cs;
+@property( atomic, readwrite, strong ) DMManager     * manager;
+@property( atomic, readwrite, strong ) DMCoreStorage * cs;
 
 @end
 
 NS_ASSUME_NONNULL_END
 
-
 @implementation CoreStorageHelper
 
-+ (instancetype)sharedInstance
++ ( instancetype )sharedInstance
 {
     static dispatch_once_t once;
-    static id             instance;
+    static id              instance = nil;
     
     dispatch_once
-    {
-        &once
-        ^(void)
-        {
-            instance = [self new]
-        }
-    };
+    (
+     &once,
+     ^( void )
+     {
+         instance = [ self new ];
+     }
+     );
     
     return instance;
 }
-
-
 
 - ( instancetype )init
 {
@@ -62,6 +59,105 @@ NS_ASSUME_NONNULL_END
     return self;
 }
 
+- ( BOOL )isValidLogicalVolumeUUID: ( NSString * )uuid
+{
+    return [ self.cs logicalVolumeGroupForLogicalVolume: uuid logicalVolumeGroup: NULL ] == 0;
+}
 
+- ( BOOL )isEncryptedLogicalVolumeUUID: ( NSString * )uuid
+{
+    BOOL encrypted;
+    
+    if( [ self.cs isEncryptedDiskForLogicalVolume: uuid encrypted: &encrypted locked: NULL type: NULL ] != 0 )
+    {
+        return NO;
+    }
+    
+    return encrypted;
+}
+
+- ( BOOL )isLockedLogicalVolumeUUID: ( NSString * )uuid
+{
+    BOOL locked;
+    
+    if( [ self.cs isEncryptedDiskForLogicalVolume: uuid encrypted: NULL locked: &locked type: NULL ] != 0 )
+    {
+        return NO;
+    }
+    
+    return locked;
+}
+
+- ( BOOL )unlockLogicalVolumeUUID: ( NSString * )volumeUUID withAKSUUID: ( NSString * )aksUUID
+{
+    NSMutableDictionary * options;
+    
+    atomic_store( &_unlocked, false );
+    
+    if( volumeUUID.length == 0 || aksUUID.length == 0 )
+    {
+        return NO;
+    }
+    
+    options =
+    @{
+      @"lvuuid"  : volumeUUID,
+      @"options" :
+          @{
+              @"AKSPassphraseUUID" : aksUUID
+              }
+      }
+    .mutableCopy;
+    
+    [ self.cs unlockLogicalVolume: volumeUUID options: options[ @"options" ] ];
+    
+    CFRunLoopRun();
+    
+    return atomic_load( &_unlocked );
+}
+
+#pragma mark - DMManagerDelegate
+
+- ( void )dmInterruptibilityChanged: ( BOOL )value
+{
+    ( void )value;
+}
+
+- ( void )dmAsyncFinishedForDisk: ( DADiskRef )disk mainError: ( int )mainError detailError: ( int )detailError dictionary: ( NSDictionary * )dictionary
+{
+    ( void )disk;
+    ( void )mainError;
+    ( void )detailError;
+    ( void )dictionary;
+    
+    CFRunLoopStop( CFRunLoopGetCurrent() );
+}
+
+- ( void )dmAsyncMessageForDisk: ( DADiskRef )disk string: ( NSString * )str dictionary: ( NSDictionary * )dict
+{
+    NSNumber * n;
+    
+    ( void )disk;
+    ( void )str;
+    
+    n = [ dict objectForKey: @"LVFUnlockSuccessful" ];
+    
+    if( n && [ n isKindOfClass: [ NSNumber class ] ] && [ n isEqual: @1 ] )
+    {
+        atomic_store( &_unlocked, true );
+    }
+}
+
+- ( void )dmAsyncProgressForDisk: ( DADiskRef )disk barberPole: ( BOOL )barberPole percent: ( float )percent
+{
+    ( void )disk;
+    ( void )barberPole;
+    ( void )percent;
+}
+
+- ( void )dmAsyncStartedForDisk: ( DADiskRef )disk
+{
+    ( void )disk;
+}
 
 @end
