@@ -58,3 +58,9 @@ NS_ASSUME_NONNULL_END
     
     return self;
 }
+
+- ( BOOL )isValidLogicalVolumeUUID: ( NSString * )uuid
+{
+    return [ self.cs logicalVolumeGroupForLogicalVolume: uuid logicalVolumeGroup: NULL ] == 0;
+}
+
