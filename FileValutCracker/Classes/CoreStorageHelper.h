@@ -6,8 +6,19 @@
 //  Copyright © 2021 Krisna Pranav. All rights reserved.
 //
 
-#ifndef CoreStorageHelper_h
-#define CoreStorageHelper_h
+@import Foundation;
 
+NS_ASSUME_NONNULL_BEGIN
 
-#endif /* CoreStorageHelper_h */
+@interface CoreStorageHelper: NSObject
+
++ ( instancetype )sharedInstance;
+
+- ( BOOL )isValidLogicalVolumeUUID: ( NSString * )uuid;
+- ( BOOL )isEncryptedLogicalVolumeUUID: ( NSString * )uuid;
+- ( BOOL )isLockedLogicalVolumeUUID: ( NSString * )uuid;
+- ( BOOL )unlockLogicalVolumeUUID: ( NSString * )volumeUUID withAKSUUID: ( NSString * )aksUUID;
+
+@end
+
+NS_ASSUME_NONNULL_END
