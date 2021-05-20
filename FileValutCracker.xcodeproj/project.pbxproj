@@ -12,6 +12,16 @@
 		9FCEB96426562CBB0071BBD3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCEB96326562CBB0071BBD3 /* main.m */; };
 		9FCEB96F26562CBB0071BBD3 /* FileValutCrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCEB96E26562CBB0071BBD3 /* FileValutCrackerTests.m */; };
 		9FCEB97A26562CBB0071BBD3 /* FileValutCrackerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCEB97926562CBB0071BBD3 /* FileValutCrackerUITests.m */; };
+		9FCEB98A26562DF60071BBD3 /* AboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCEB98926562DF60071BBD3 /* AboutWindowController.m */; };
+		9FCEB98D26562F730071BBD3 /* ApplicationDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCEB98C26562F730071BBD3 /* ApplicationDelegate.m */; };
+		9FCEB990265631250071BBD3 /* CoreStorageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCEB98F265631250071BBD3 /* CoreStorageHelper.m */; };
+		9FCEB993265633F30071BBD3 /* FileVaultCracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCEB992265633F30071BBD3 /* FileVaultCracker.m */; };
+		9FCEB99626563AF70071BBD3 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCEB99526563AF70071BBD3 /* MainWindowController.m */; };
+		9FCEB99926563DB20071BBD3 /* NSString+FileVaultCracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCEB99826563DB20071BBD3 /* NSString+FileVaultCracker.m */; };
+		9FCEB9A3265640970071BBD3 /* AboutWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FCEB9A0265640310071BBD3 /* AboutWindowController.xib */; };
+		9FCEB9A6265641210071BBD3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FCEB9A4265641210071BBD3 /* MainMenu.xib */; };
+		9FCEB9A92656418C0071BBD3 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FCEB9A72656418C0071BBD3 /* MainWindowController.xib */; };
+		9FCEB9AB265641B50071BBD3 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9FCEB9AA265641B50071BBD3 /* Icon.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +54,24 @@
 		9FCEB97526562CBB0071BBD3 /* FileValutCrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FileValutCrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FCEB97926562CBB0071BBD3 /* FileValutCrackerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileValutCrackerUITests.m; sourceTree = "<group>"; };
 		9FCEB97B26562CBB0071BBD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FCEB98826562DDB0071BBD3 /* AboutWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutWindowController.h; sourceTree = "<group>"; };
+		9FCEB98926562DF60071BBD3 /* AboutWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutWindowController.m; sourceTree = "<group>"; };
+		9FCEB98B26562F650071BBD3 /* ApplicationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationDelegate.h; sourceTree = "<group>"; };
+		9FCEB98C26562F730071BBD3 /* ApplicationDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicationDelegate.m; sourceTree = "<group>"; };
+		9FCEB98E265631120071BBD3 /* CoreStorageHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreStorageHelper.h; sourceTree = "<group>"; };
+		9FCEB98F265631250071BBD3 /* CoreStorageHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreStorageHelper.m; sourceTree = "<group>"; };
+		9FCEB991265633E50071BBD3 /* FileVaultCracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileVaultCracker.h; sourceTree = "<group>"; };
+		9FCEB992265633F30071BBD3 /* FileVaultCracker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileVaultCracker.m; sourceTree = "<group>"; };
+		9FCEB99426563AE90071BBD3 /* MainWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
+		9FCEB99526563AF70071BBD3 /* MainWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
+		9FCEB99726563D970071BBD3 /* NSString+FileVaultCracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+FileVaultCracker.h"; sourceTree = "<group>"; };
+		9FCEB99826563DB20071BBD3 /* NSString+FileVaultCracker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+FileVaultCracker.m"; sourceTree = "<group>"; };
+		9FCEB99B26563EA60071BBD3 /* CSFDE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSFDE.h; sourceTree = "<group>"; };
+		9FCEB99C26563EB30071BBD3 /* DiskManagement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DiskManagement.h; sourceTree = "<group>"; };
+		9FCEB9A1265640310071BBD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = AboutWindowController.xib; sourceTree = "<group>"; };
+		9FCEB9A5265641210071BBD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = MainMenu.xib; sourceTree = "<group>"; };
+		9FCEB9A82656418C0071BBD3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = MainWindowController.xib; sourceTree = "<group>"; };
+		9FCEB9AA265641B50071BBD3 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +122,8 @@
 		9FCEB95626562CB90071BBD3 /* FileValutCracker */ = {
 			isa = PBXGroup;
 			children = (
+				9FCEB99D26563FDB0071BBD3 /* Interface */,
+				9FCEB98726562DBB0071BBD3 /* Classes */,
 				9FCEB95D26562CBB0071BBD3 /* Assets.xcassets */,
 				9FCEB95F26562CBB0071BBD3 /* Main.storyboard */,
 				9FCEB96226562CBB0071BBD3 /* Info.plist */,
@@ -119,6 +149,62 @@
 				9FCEB97B26562CBB0071BBD3 /* Info.plist */,
 			);
 			path = FileValutCrackerUITests;
+			sourceTree = "<group>";
+		};
+		9FCEB98726562DBB0071BBD3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9FCEB99A26563E950071BBD3 /* Private Headers */,
+				9FCEB98826562DDB0071BBD3 /* AboutWindowController.h */,
+				9FCEB98926562DF60071BBD3 /* AboutWindowController.m */,
+				9FCEB98B26562F650071BBD3 /* ApplicationDelegate.h */,
+				9FCEB98C26562F730071BBD3 /* ApplicationDelegate.m */,
+				9FCEB98E265631120071BBD3 /* CoreStorageHelper.h */,
+				9FCEB98F265631250071BBD3 /* CoreStorageHelper.m */,
+				9FCEB991265633E50071BBD3 /* FileVaultCracker.h */,
+				9FCEB992265633F30071BBD3 /* FileVaultCracker.m */,
+				9FCEB99426563AE90071BBD3 /* MainWindowController.h */,
+				9FCEB99526563AF70071BBD3 /* MainWindowController.m */,
+				9FCEB99726563D970071BBD3 /* NSString+FileVaultCracker.h */,
+				9FCEB99826563DB20071BBD3 /* NSString+FileVaultCracker.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		9FCEB99A26563E950071BBD3 /* Private Headers */ = {
+			isa = PBXGroup;
+			children = (
+				9FCEB99B26563EA60071BBD3 /* CSFDE.h */,
+				9FCEB99C26563EB30071BBD3 /* DiskManagement.h */,
+			);
+			path = "Private Headers";
+			sourceTree = "<group>";
+		};
+		9FCEB99D26563FDB0071BBD3 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				9FCEB99F265640130071BBD3 /* Base.lproj */,
+				9FCEB99E26563FE20071BBD3 /* Images */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+		9FCEB99E26563FE20071BBD3 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				9FCEB9AA265641B50071BBD3 /* Icon.icns */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		9FCEB99F265640130071BBD3 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				9FCEB9A0265640310071BBD3 /* AboutWindowController.xib */,
+				9FCEB9A4265641210071BBD3 /* MainMenu.xib */,
+				9FCEB9A72656418C0071BBD3 /* MainWindowController.xib */,
+			);
+			path = Base.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,8 +310,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FCEB9A3265640970071BBD3 /* AboutWindowController.xib in Resources */,
 				9FCEB95E26562CBB0071BBD3 /* Assets.xcassets in Resources */,
 				9FCEB96126562CBB0071BBD3 /* Main.storyboard in Resources */,
+				9FCEB9AB265641B50071BBD3 /* Icon.icns in Resources */,
+				9FCEB9A6265641210071BBD3 /* MainMenu.xib in Resources */,
+				9FCEB9A92656418C0071BBD3 /* MainWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,7 +340,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FCEB99926563DB20071BBD3 /* NSString+FileVaultCracker.m in Sources */,
+				9FCEB99626563AF70071BBD3 /* MainWindowController.m in Sources */,
+				9FCEB993265633F30071BBD3 /* FileVaultCracker.m in Sources */,
+				9FCEB990265631250071BBD3 /* CoreStorageHelper.m in Sources */,
 				9FCEB96426562CBB0071BBD3 /* main.m in Sources */,
+				9FCEB98A26562DF60071BBD3 /* AboutWindowController.m in Sources */,
+				9FCEB98D26562F730071BBD3 /* ApplicationDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +388,30 @@
 				9FCEB96026562CBB0071BBD3 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9FCEB9A0265640310071BBD3 /* AboutWindowController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9FCEB9A1265640310071BBD3 /* Base */,
+			);
+			name = AboutWindowController.xib;
+			sourceTree = "<group>";
+		};
+		9FCEB9A4265641210071BBD3 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9FCEB9A5265641210071BBD3 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		9FCEB9A72656418C0071BBD3 /* MainWindowController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9FCEB9A82656418C0071BBD3 /* Base */,
+			);
+			name = MainWindowController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
