@@ -88,7 +88,6 @@ NS_ASSUME_NONNULL_END
     return locked;
 }
 
-
 - ( BOOL )unlockLogicalVolumeUUID: ( NSString * )volumeUUID withAKSUUID: ( NSString * )aksUUID
 {
     NSMutableDictionary * options;
@@ -123,4 +122,43 @@ NS_ASSUME_NONNULL_END
 {
     ( void )value;
 }
+
+- ( void )dmAsyncFinishedForDisk: ( DADiskRef )disk mainError: ( int )mainError detailError: ( int )detailError dictionary: ( NSDictionary * )dictionary
+{
+    ( void )disk;
+    ( void )mainError;
+    ( void )detailError;
+    ( void )dictionary;
+    
+    CFRunLoopStop( CFRunLoopGetCurrent() );
+}
+
+- ( void )dmAsyncMessageForDisk: ( DADiskRef )disk string: ( NSString * )str dictionary: ( NSDictionary * )dict
+{
+    NSNumber * n;
+    
+    ( void )disk;
+    ( void )str;
+    
+    n = [ dict objectForKey: @"LVFUnlockSuccessful" ];
+    
+    if( n && [ n isKindOfClass: [ NSNumber class ] ] && [ n isEqual: @1 ] )
+    {
+        atomic_store( &_unlocked, true );
+    }
+}
+
+- ( void )dmAsyncProgressForDisk: ( DADiskRef )disk barberPole: ( BOOL )barberPole percent: ( float )percent
+{
+    ( void )disk;
+    ( void )barberPole;
+    ( void )percent;
+}
+
+- ( void )dmAsyncStartedForDisk: ( DADiskRef )disk
+{
+    ( void )disk;
+}
+
+@end
 
