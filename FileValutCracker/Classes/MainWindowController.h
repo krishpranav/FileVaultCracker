@@ -6,8 +6,12 @@
 //  Copyright © 2021 Krisna Pranav. All rights reserved.
 //
 
-#ifndef MainWindowController_h
-#define MainWindowController_h
+@import Cocoa;
 
+NS_ASSUME_NONNULL_BEGIN
 
-#endif /* MainWindowController_h */
+@interface MainWindowController : NSWindowController
+
+@end
+
+NS_ASSUME_NONNULL_END
