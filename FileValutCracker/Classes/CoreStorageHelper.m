@@ -64,3 +64,27 @@ NS_ASSUME_NONNULL_END
     return [ self.cs logicalVolumeGroupForLogicalVolume: uuid logicalVolumeGroup: NULL ] == 0;
 }
 
+- ( BOOL )isEncryptedLogicalVolumeUUID: ( NSString * )uuid
+{
+    BOOL encrypted;
+    
+    if( [ self.cs isEncryptedDiskForLogicalVolume: uuid encrypted: &encrypted locked: NULL type: NULL ] != 0 )
+    {
+        return NO;
+    }
+    
+    return encrypted;
+}
+
+- ( BOOL )isLockedLogicalVolumeUUID: ( NSString * )uuid
+{
+    BOOL locked;
+    
+    if( [ self.cs isEncryptedDiskForLogicalVolume: uuid encrypted: NULL locked: &locked type: NULL ] != 0 )
+    {
+        return NO;
+    }
+    
+    return locked;
+}
+
