@@ -9,7 +9,7 @@
 @import DiskArbitration;
 
 #import "CoreStorageHelper.h"
-#import "DiskManagement.h"
+#import "Private Headers/DiskManagement.h"
 #import <stdatomic.h>
 
 NS_ASSUME_NONNULL_BEGIN
